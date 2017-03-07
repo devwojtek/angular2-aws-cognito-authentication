@@ -1,0 +1,278 @@
+<header class="top-menu">
+	<div class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" >
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand"><span class="sr-only">Kloud DMS</span></a>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="padding-left:0; padding-right:0;">
+				<ul class="nav navbar-nav navigation">
+					<li>
+						<a class="icon ion-wrench">
+							<span class="sr-only">Settings</span>
+
+						</a>
+					</li>
+					<li>
+						<a class="icon ion-earth"><span class="sr-only">Notifications</span>
+							<span class="ruby">
+								<span class="badge">10</span>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a class="icon ion-chatbox"> <span class="sr-only">chat</span>
+							<span class="ruby">
+								<span class="badge">3</span>
+							</span>
+						</a>
+					</li>
+			
+					<li>
+						<a class="icon ion-android-person">
+							<span class="sr-only">Profile</span>
+						</a>
+					</li>
+					<li class="left-attachment">
+						<a>Weather</a>
+					</li>
+				</ul>
+		
+				<ul class="nav navbar-nav navigation">
+
+					<li>
+						<a>Customer Information</a>
+					</li>			
+					<li>
+						<a>Vehicle Information</a>
+					</li>
+					<li>
+						<a>Write Ticket</a>
+					</li>
+					<li>
+						<a (click)="myModal.open()">Schedule Appointment</a>
+					</li>
+
+					<li class="left-attachment">
+						<a>Today's Date</a>
+					</li>
+
+
+				</ul>
+			</div>
+		</div>
+
+	</div>
+</header>
+<!--
+<header  class="top-menu">
+
+
+
+
+	<nav class="top-menu-nav">
+		<ul class="navigation">
+			<li class="left-attachment">
+				<a>Logo</a>
+			</li>
+			<li>
+				<a class="icon ion-wrench">
+					<span class="accessibility-text" style="display:none;">Settings</span>
+				
+				</a>
+			</li>
+			<li>
+				<a class="icon ion-earth"><span class="accessibility-text" style="display:none;">Notifications</span>
+					<span class="ruby">
+						<span class="badge">10</span>
+					</span>
+				</a>
+			</li>
+			<li>
+				<a class="icon ion-chatbox"> <span class="accessibility-text" style="display:none">chat</span>
+					<span class="ruby">
+					<span class="badge">3</span>
+					</span>
+				</a>
+			</li>
+			<li>
+				<a class="icon ion-android-person">
+					<span class="accessibility-text" style="display:none">Profile</span>
+				</a>
+			</li>
+			<li class="center">
+				<a>Weather</a>
+			</li>
+		</ul>
+		
+	</nav>
+</header>-->
+
+ <modal #myModal [closeOnEscape]="false" [closeOnOutsideClick]="false">
+    <!-- <modal-header>
+        <h1>Modal header</h1>
+    </modal-header> -->
+    <modal-content>
+	    <wizard>
+			<wizard-step title="Step 1">
+				<form #emailForm="ngForm">
+			      <div class="form-group">
+			        <label>Choose a option</label>
+				    <div *ngFor="let option of options">
+				        <label>
+					        <input class="" type="radio" name="option" [(ngModel)]="_form.step1.option" 
+					        [value]="option.value">
+					        {{option.display}}
+				        </label>
+				    </div>
+			        <input type="text" class="form-control" name="value" aria-describedby="emailHelp" [(ngModel)]="_form.step1.value" [placeholder]="getPlaceHolderString(_form.step1.option)" required>
+			        <small *ngIf="_form.step1.option == 'email'" id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+			      </div>
+			    </form>
+			    <div class="row text-right">				
+			    	<div class="col-xs-12">
+					<button class=" btn btn-sm btn-primary text-right" type="button" nextStep [disabled]="!emailForm.form.valid" >Next</button>
+					</div>
+				</div>
+			</wizard-step>
+
+			<wizard-step title="Step 2">			
+				<div class="row text-center p-l-10">
+					<div class="form-group">
+						<div class="col-xs-3 card" *ngFor="let card of cardData">
+							<div class="text-center"><label>{{card.label}}</label></div>
+							<div class="text-center"><small>{{card.content}}</small></div>
+						</div>
+					</div>
+				</div>
+				<div class="row text-right">				
+			    	<div class="col-xs-12">
+						<button class=" btn btn-sm btn-primary" type="button" previousStep>Previous</button>
+						<button class=" btn btn-sm btn-primary" type="button" nextStep>Next</button>
+					</div>
+				</div>
+			</wizard-step>
+			<wizard-step title="Step 3">
+				<form #complainForm="ngForm">
+			    	<div class="form-group">
+				    	<label>Complaints</label>
+				    	<textarea class="form-control" name="complain" [(ngModel)]="_form.step3.value" required></textarea>
+			    	</div>
+			    </form>				
+			    <div class="row text-right">				
+			    	<div class="col-xs-12">
+						<button class=" btn btn-sm btn-primary" type="button" previousStep>Previous</button>
+						<button class=" btn btn-sm btn-primary" type="button" [disabled]="!complainForm.form.valid" nextStep >Next</button>
+					</div>
+				</div>
+			</wizard-step>
+			<wizard-step title="Step 4">			
+				<form #dateForm="ngForm">
+			    	<div class="form-group">
+				    	<label>Select a date</label>
+				    	<input class="form-control" name="date" [ngModel]="_form.step4.date" (focus)="toggleDatePicker(true)" readonly />
+						<date-picker name="picker" *ngIf="showDatePicker" [initDate]="_form.step4.date"
+						           (onDatePickerCancel)="toggleDatePicker($event)"
+						           (onSelectDate)="setDate($event)"></date-picker>
+			    	</div>
+			    </form>		
+			    <div class="row text-right">				
+			    	<div class="col-xs-12">    
+						<button class=" btn btn-sm btn-primary" type="button" previousStep>Previous</button>
+						<button class=" btn btn-sm btn-primary" type="button" nextStep [disabled]="!dateForm.form.valid">Next</button>
+					</div>
+				</div>
+			</wizard-step>
+			 <wizard-step title="Step 5">
+			  	<div class="form-group">
+			  		<label>Select {{getDisplayString(_form.step1.option)}} </label> : <label> {{_form.step1.value }}</label>
+			  	</div>
+			  	<div class="form-group">
+			  		<label>Selected a card </label> : <label> {{_form.step2.value }}</label>
+			  	</div>
+			  	<div class="form-group">
+			  		<label>Complaints </label> : <label> {{_form.step3.value }}</label>
+			  	</div>
+			  	<div class="form-group">
+			  		<label>Available Date </label> : <label> {{_form.step4.date }}</label>
+			  	</div>
+			  	<div class="row text-right">				
+			    	<div class="col-xs-12">
+					  	<button class=" btn btn-sm btn-primary" type="button" previousStep >Previous</button>
+						<button class=" btn btn-sm btn-primary" type="button" (click)="onComplete()" >Done</button>
+					</div>
+				</div>
+			</wizard-step>
+		</wizard>
+        <!-- <form-wizard (onStepChanged)="stepChanged($event)">
+		  <wizard-step [title]="'Step 1'" [isValid]="emailForm.form.valid" [showPrev]="false">
+		    <h1></h1>
+		    <form #emailForm="ngForm">
+		      <div class="form-group">
+		        <label>Choose a option</label>
+			    <div *ngFor="let option of options">
+			        <label>
+				        <input class="" type="radio" name="option" [(ngModel)]="_form.step1.option" 
+				        [value]="option.value">
+				        {{option.display}}
+			        </label>
+			    </div>
+		        <input type="text" class="form-control" name="value" aria-describedby="emailHelp" [(ngModel)]="_form.step1.value" [placeholder]="getPlaceHolderString(_form.step1.option)" required>
+		        <small *ngIf="_form.step1.option == 'email'" id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+		      </div>
+		    </form>
+		  </wizard-step>
+		  <wizard-step [title]="'Step 2'" >
+		    <h1></h1>
+
+		  </wizard-step>
+		  <wizard-step [title]="'Step 3'" [isValid]="complainForm.form.valid" >
+		    <h1></h1>
+		    <form #complainForm="ngForm">
+		    	<div class="form-group">
+			    	<label>Complaints</label>
+			    	<textarea class="form-control" name="complain" [(ngModel)]="_form.step3.value" required></textarea>
+		    	</div>
+		    </form>		    
+		  </wizard-step>
+		  <wizard-step [title]="'Step 4'" >
+		    <h1></h1>
+		    <form #dateForm="ngForm">
+		    	<div class="form-group">
+			    	<label>Select a date</label>
+			    	<input class="form-control" name="date" [ngModel]="_form.step4.date" (focus)="toggleDatePicker(true)" readonly />
+					<date-picker name="picker" *ngIf="showDatePicker" [initDate]="_form.step4.date"
+					           (onDatePickerCancel)="toggleDatePicker($event)"
+					           (onSelectDate)="setDate($event)"></date-picker>
+		    	</div>
+		    </form>		    
+
+		    
+		  </wizard-step>
+		  <wizard-step [title]="'Step 5'" (onComplete)="onComplete($event)">
+		  	<h1></h1>
+		  	<div class="form-group">
+		  		<label>Select {{getDisplayString(_form.step1.option)}} </label> : <label> {{_form.step1.value }}</label>
+		  	</div>
+		  	<div class="form-group">
+		  		<label>Selected a card </label> : <label> {{_form.step2.value }}</label>
+		  	</div>
+		  	<div class="form-group">
+		  		<label>Complaints </label> : <label> {{_form.step3.value }}</label>
+		  	</div>
+		  	<div class="form-group">
+		  		<label>Available Date </label> : <label> {{_form.step4.date }}</label>
+		  	</div>
+		  </wizard-step>
+
+		</form-wizard> -->
+    </modal-content>
+    <!-- <modal-footer>
+        <button class="btn btn-primary" (click)="myModal.close()">close</button>
+    </modal-footer> -->
+</modal>

@@ -1,0 +1,39 @@
+<div class="col-md-12">
+	<div class="routerwall" style="">
+		<div class="">
+			<div class="">
+				<h3 style="text-align:center; color:white;">Service Router</h3>
+			</div>
+			<div class="" dnd-sortable-container [sortableData]="containers" >
+				<div class="containerWall"    *ngFor="let container of containers; let i = index" dnd-sortable [sortableIndex]="i" [dragEnabled]="dragOperation">
+					<div class="panel panel-router col-md-2"  dnd-sortable-container [sortableData]="container.tickets" [dropZones]="container.nextZones">
+						<div class="panel-heading">
+							<h4>{{container.name}}</h4>
+						</div>
+						<div class="">
+							<ul class="list-group">
+								<li *ngFor="let ticket of container.tickets; let x = index" class="list-group-item" dnd-sortable [sortableIndex]="x" [dragEnabled]="!dragOperation"  [dragData]="ticket">
+									<div class="routercard">
+										<div class="top-card" style="background-color:royalblue;">{{ticket.advisor}} <a style="text-decoration:underline; color:white;"><span class="pull-right">#{{ticket.id}}</span></a></div>
+										<div class="top-card" *ngIf="['serviceFloor', 'multipoint'].indexOf(container.nextZones[0]) > -1">Tech:  {{ticket.technician}}</div>
+										<div class="customer-name">{{ticket.customerName}}</div>
+										<div class="customer-vehicle">{{ticket.vehicle}}</div>
+										<div class="customer-vehicle" *ngIf="['parts'].indexOf(container.nextZones[0]) > -1">
+
+											<ol><li *ngFor="let part of ticket.parts;">
+													{{part.name}}</li>
+											</ol>
+										</div>
+
+										<div class="time clearfix"><span class="pull-left">{{ticket.time}}</span>
+											<span class="pull-right">{{ticket.timeRemaining}}</span></div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,353 @@
+.top-menu .navbar-brand {
+	background-image: url('/images/logo.jpg');
+	background-size:cover;
+	background-position:center;
+	width:200px;
+	height:110px;
+	clear:none;
+	
+	
+	position:relative;
+	border-radius:0px;
+	
+}
+
+body {
+/*    background: skyblue;
+    background-image: url("/images/sky_texture1997.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;*/
+}
+.cardwall {
+    background-color: #2c3e50;
+    flex: 1 1 auto;
+    border-radius: 0px;
+    padding: 10px;
+    padding-right: 0px;
+    float: left;
+    width: 100%;
+}
+.cardwall ul {
+    #width: 75%;
+    #margin: 6.4% 0 0 18.7%;
+    margin-left: 0;
+    background-color: #333;
+    padding-left: 0;
+}
+.cardwall ul>li {
+    min-height: 150px;
+    max-height: 150px;
+    margin-right: .5%;
+    margin-bottom: .5%;
+    float: left;
+    list-style: none;
+    position: relative;
+    cursor: pointer;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 175;
+    -webkit-perspective: 1500;
+    -moz-perspective: 1500;
+    -ms-perspective: 1500;
+    -o-perspective: 1500;
+    perspective: 1500;
+}
+.cardwall ul li div div,
+.cardwall ul li div div+div {
+    position: relative;
+    height: initial;
+    width: initial;
+}
+.cardwall ul li div,
+.cardwall ul li div+div {
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.cardwall .rear ol {
+    margin: 10px;
+    position: relative;
+}
+.cardwall .rear ol li {
+    line-height: 1em;
+    text-align: left;
+}
+.front {
+	padding-top:25px;
+	vertical-align:center;
+    text-align: center;
+    font-size: 24px;
+}
+
+.kpi {
+	font-size:30px;
+	font-weight:bolder;
+}
+
+.rear {
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    -o-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    background: #4f6f8f;
+}
+.rear p {
+    margin: 0;
+}
+.cardwall ul > li:hover {
+  /*  min-height: 250px;
+    max-height: 300px;*/
+	
+}
+
+
+
+.cardwall ul li:hover > .front {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+.cardwall ul li:hover > .rear {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+}
+#tile1 {
+    background: #f12481;
+}
+#tile2 {
+    background: #2ab9a7;
+}
+#tile3 {
+    background: #0fb9ef;
+}
+#tile4 {
+    background: #d67118;
+}
+#tile5 {
+    background: #912525;
+}
+#tile6 {
+    background: #6240f2;
+}
+#tile7 {
+    background: #29b765;
+}
+#tile8 {
+    background: #f1c410;
+}
+#tile9 {
+    background: #007fb8;
+}
+header.top-menu {
+    position: fixed;
+    top: 0;
+    height: 60px;
+    margin: 0;
+}
+.col:not(:first-child),
+.col:not(:last-child) {
+    padding-right: 7px;
+    padding-left: 7px;
+    width: 24%;
+}
+.top-menu {
+    position: fixed;
+    /* Set the navbar to fixed position */
+    
+    top: 0;
+    /* Position the navbar at the top of the page */
+    
+    width: 100%;
+    /* Full width */
+    
+    z-index: 100;
+}
+.left-attachment {
+    float: left !important;
+}
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    position: relative;
+    color: white;
+    float: right;
+}
+.right-attachment {
+    float: right !important;
+}
+.top-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, .8);
+    border-radius: 0px;
+    line-height: 1;
+	width:85%;
+	margin-top:1.5px;
+	float:right;
+}
+.top-menu ul li.active {
+    border-radius: 0px;
+    border: 1px solid skyblue;
+}
+.main-actions-navigation li {
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+    text-align: center;
+    color: white;
+}
+.main-actions-navigation li a {
+    border: 1.5px outset skyblue;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a.active {
+    border: 1.5 solid inset;
+	background-color:#2c3e50;
+	color:skyblue;
+	
+}
+.top-menu li {
+    float: right;
+}
+.top-menu li a {
+    display: block;
+    color: white;
+    padding: 16px;
+    text-decoration: none;
+    position: relative;
+    font-size: 18px;
+}
+.top-menu .ruby {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+}
+.top-menu .ruby .badge {
+    background-color: red;
+}
+.top-menu li a:hover, .top-menu li a.active {
+	background-color:#2c3e50;
+    color: skyblue;
+}
+.side-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #2c3e50;
+    width: 100%;
+    color: #fff;
+    border-radius: 0px;
+}
+.side-menu li {
+    dispilay: block;
+}
+.side-menu li a {
+    display: block;
+    font-size: 13;
+    padding: 10px 10px 11px 8px;
+    width: 100%;
+	 border-right: 2px solid skyblue;
+    color: white;
+}
+.side-menu li a.active,
+.side-menu li a:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    text-decoration: none;
+    border-right: 4px solid skyblue;
+    color: skyblue;
+}
+.side-menu li a.active {
+    color: skyblue;
+}
+.routerwall {
+    background-color: #2c3e50;
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 0px;
+}
+.routerwall .col-md-12 {
+    border-radius: 0px;
+}
+.routerwall .list-group-item {
+    padding: 0;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 94%;
+    border-radius: 0px;
+}
+.routerwall .panel {
+    overflow: visible;
+    padding-bottom: 3px;
+    min-height: 480px;
+    padding-left: 5px;
+    padding-right: 5px;
+    flex-direction: column;
+    -webkit-box-orient: verticle;
+    -webkit-box-direction: normal;
+    display: flex;
+    white-space: normal;
+    vertical-align: top;
+    position: relative;
+    margin-right: .2%;
+    margin-left: .2%;
+    width: 16%;
+}
+.containerWall {
+    padding-left: 1%;
+}
+.routerwall .panel-heading {
+    margin: 0px;
+    border-radius: 0px;
+    color: white;
+}
+.routerwall .panel-body {
+    padding: 0px;
+}
+.panel-router .panel-heading {
+    background-color: #0fb9ef;
+}
+.routercard {
+    top: 0;
+    font-size: 12px;
+}
+.routercard .top-card {
+    top: 0;
+    line-height: 15px;
+    background-color: rgba(122, 112, 122, .8);
+    padding: 5px;
+    color: white;
+}
+.routercard .customer-name {
+    padding: 0 10px;
+}
+.routercard .customer-vehicle {
+    padding: 0px 0px 0px 10px;
+    border-bottom: 1px solid rgba(51, 51, 51, .4);
+}
+.routercard .time {
+    padding: 3px;
+}
