@@ -15,6 +15,10 @@ export class AppComponent implements OnInit {
   	public auth: AuthService, 
   	public activatedRoute: ActivatedRoute) {  	
   }
+
+  ngOnInit() {
+  	
+  }
 }
 
 
