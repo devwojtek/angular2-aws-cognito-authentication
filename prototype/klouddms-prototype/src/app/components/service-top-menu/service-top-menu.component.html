@@ -139,11 +139,28 @@
 			</wizard-step>
 
 			<wizard-step title="Step 2">			
-				<div class="row text-center p-l-10">
-					<div class="form-group">
-						<div class="col-xs-3 card" *ngFor="let card of cardData">
-							<div class="text-center"><label>{{card.label}}</label></div>
-							<div class="text-center"><small>{{card.content}}</small></div>
+				<div class="row text-center">
+					<div class="col-sm-12 form-group">
+						<div class="" *ngFor="let card of cardData">
+							<div class="widget-wrapper">
+								<div class="widget item-widget">
+									<a href="">
+										<div class="image">
+											<img class="absolute-center site-speed-lazy-image img-lazy-load" src="http://i.ebayimg.com/images/g/VbsAAOSwfVpYpfJ9/s-l225.jpg" alt="2004 Ford F-150 FX4">
+										</div>
+										<div class="item-details">
+											<div class="title">2004 Ford F-150 FX4</div>
+											<div class="price-row">
+												<div class="discounted-price">
+													<span class="price">MYR 75,149.01</span>
+												</div>
+											</div>
+										</div>
+									</a>
+								</div>
+							</div>
+							<!-- <div class="text-center"><label>{{card.label}}</label></div>
+							<div class="text-center"><small>{{card.content}}</small></div> -->
 						</div>
 					</div>
 				</div>
