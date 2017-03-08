@@ -14,7 +14,8 @@ export class AuthService {
     }    
 
     isLogged() {
-        if(JSON.parse(localStorage.getItem('auth'))['id'] == null) {
+        let token = JSON.parse(localStorage.getItem('auth'));
+        if(token['id'] == null || token['id'] == "undefined") {
             return false;
         } else {
             return true;

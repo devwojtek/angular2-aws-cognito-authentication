@@ -22,7 +22,7 @@ export class BeforeComponent implements OnInit {
   		console.log(params);
   		console.log("params: ", params['id'] == null || params['id'] == undefined);
 
-  		if(params['id'] == null || params['id'] == undefined){
+  		if(params['id'] == null || params['access'] == undefined || params['id'] == "undefined" || params['access'] == "undefined"){
   			if(this.auth.isLogged() == false) {
 		  		window.location.href = this.auth.getAuthServerUrl();
 		  	}  			
