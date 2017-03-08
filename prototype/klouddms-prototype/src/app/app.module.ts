@@ -5,10 +5,9 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { DndModule } from 'ng2-dnd';
 
-import { FormWizardModule } from 'angular2-wizard';
 import { ModalModule } from "ng2-modal";
 import { DateTimePickerModule } from 'ng2-date-time-picker';
-import {WizardModule} from "ng2-archwizard/dist";
+import { WizardModule } from "ng2-archwizard/dist";
 
 import { AppComponent } from './app.component';
 import { AfterComponent } from './components/after-login/after-login.component';
