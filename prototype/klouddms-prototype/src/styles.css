@@ -430,7 +430,7 @@ a img {
 .item-widget .item-details {
     border-top: 1px solid #dcdcdc;
     padding: .4em 1em;
-    height: 4.35em;
+    height: 5.35em;
 }
 
 .item-widget .item-details>div.title {
@@ -479,4 +479,18 @@ a img {
 
 .item-widget div.price-row>div.discounted-price span.price, .item-widget div.price-row>.current-price span.price {
     font-weight: bold;
+}
+
+.vehicle-card input[type="radio"]{ /* HIDE RADIO */
+  visibility: hidden; /* Makes input not-clickable */
+  position: absolute; /* Remove input from document flow */
+}
+
+.vehicle-card > input[type="radio"] + div.widget-wrapper{ /* IMAGE STYLES */
+  cursor:pointer;
+  border:2px solid transparent;
+}
+
+.vehicle-card > input[type="radio"]:checked + div.widget-wrapper{ /* (RADIO CHECKED) IMAGE STYLES */
+  border:2px solid #f00;
 }
