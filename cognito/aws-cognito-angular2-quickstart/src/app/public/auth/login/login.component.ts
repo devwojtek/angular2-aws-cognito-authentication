@@ -53,11 +53,8 @@ export class LoginComponent implements CognitoCallback, LoggedInCallback, OnInit
         } 
 
 		else { 
-            //success
             localStorage.setItem("token", JSON.stringify(result));
-            this.transfer.send(result);
             window.location.href = this.util.getRedirectUrl() + "/"+ result.idToken['jwtToken']+"/"+result.accessToken['jwtToken'];
-            // this.router.navigate(['/securehome']);
         }
     }
 

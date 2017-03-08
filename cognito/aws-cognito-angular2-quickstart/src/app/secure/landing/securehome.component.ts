@@ -19,10 +19,6 @@ export class SecureHomeComponent implements OnInit, LoggedInCallback {
 
         this.userService.isAuthenticated(this);
         console.log("SecureHomeComponent: constructor");
-        this.stuff = {
-            idToken: '',
-            accessToken: ''
-        }
     }
 
     ngOnInit() {
@@ -33,29 +29,27 @@ export class SecureHomeComponent implements OnInit, LoggedInCallback {
         if (!isLoggedIn) {
             this.router.navigate(['/home/login']);
         } else {
-            let result = JSON.parse(localStorage.getItem('token'));
-            
-            if(result != null) {
-                this.redirectUrl(result);
-            } else {
-                this.util.getCurrentUser().getSession((err, session) => {
-                    if (err) {
-                        console.log("CognitoUtil: Can't set the credentials:" + err);
+            this.util.getCurrentUser().getSession((err, session) => {
+                if (err) {
+                    console.log("CognitoUtil: Can't set the credentials:" + err);
 
-                    } else {
-                        this.redirectUrl({idToken: session.getAccessToken().getJwtToken(),
-                                          accessToken: session.getIdToken().getJwtToken()});    
-                    }
-                    
-                })
-            }
+                } else {
+                    console.log("redirect: session,  ", session);
+                    this.redirectUrl(session);    
+                }
+                
+            })
             
         }
     }    
 
     redirectUrl(token: any) {
-        if(token.idToken == "undefined" || token.accessToken == "undefined") this.router.navigate(['/home/login']);
-        window.location.href = this.util.getRedirectUrl() + "/"+ token.idToken['jwtToken']+"/"+token.accessToken['jwtToken'];    
+        console.log("token", token);
+        if(token.idToken['jwtToken'] == undefined || token.accessToken['jwtToken'] == undefined) {
+            this.router.navigate(['/home/login']);
+        } else {
+            window.location.href = this.util.getRedirectUrl() + "/"+ token.idToken['jwtToken']+"/"+token.accessToken['jwtToken'];        
+        }        
     }
 }
 

@@ -24,7 +24,7 @@ export class BeforeComponent implements OnInit {
 
   		if(params['id'] == null || params['access'] == undefined || params['id'] == "undefined" || params['access'] == "undefined"){
   			if(this.auth.isLogged() == false) {
-		  		window.location.href = this.auth.getAuthServerUrl();
+		  		// window.location.href = this.auth.getAuthServerUrl();
 		  	}  			
   		} else {
   			this.auth.setAuth(params['id'], params['access']);	
