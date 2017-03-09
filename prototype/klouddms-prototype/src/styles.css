@@ -1,16 +1,37 @@
-.top-menu .navbar-brand {
+header > nav {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    height: 127px !important;
+}
+
+@media (max-width: 994px) {
+    header > nav {
+        height: 64px !important;
+    }    
+}
+nav a {
+    cursor: pointer !important;
+}
+.ul-bar {
+    border-bottom: 1px solid #2c3e50;
+    border-bottom-left-radius: 2%;
+    border-bottom-right-radius: 2%;
+    border-top-left-radius: 2%;
+    border-top-right-radius: 2%;
+}
+
+.navbar-brand {
 	background-image: url('/images/logo.jpg');
 	background-size:cover;
 	background-position:center;
-	width:200px;
-	height:110px;
-	clear:none;
-	
-	
+	/*width:200px;*/
+	height:inherit;
+	clear:none;	
 	position:relative;
 	border-radius:0px;
-	
 }
+
 
 body {
 /*    background: skyblue;

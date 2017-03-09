@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+declare var $: any;
 
 @Component({
   selector: 'app-service-top-menu',
@@ -37,7 +38,7 @@ export class ServiceTopMenuComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    $(".button-collapse").sideNav();
   }
 
   getPlaceHolderString(option: string) {
