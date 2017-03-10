@@ -77,21 +77,15 @@ body {
     width: 100%;
 }
 
-.cardwall ul {
+.cardwall .col.s12 {
     #width: 75%;
     #margin: 6.4% 0 0 18.7%;
     margin-left: 0;
     background-color: #333;
     padding-left: 0;
 }
-.cardwall ul>li {
-    min-height: 150px;
-    max-height: 150px;
-    margin-right: .5%;
-    margin-bottom: .5%;
-    float: left;
-    list-style: none;
-    position: relative;
+
+.cardwall .col.s12>div {
     cursor: pointer;
     font-family: 'Open Sans Condensed', sans-serif;
     font-weight: 175;
@@ -101,18 +95,19 @@ body {
     -o-perspective: 1500;
     perspective: 1500;
 }
-.cardwall ul li div div,
-.cardwall ul li div div+div {
+
+.cardwall .col.s12 > .col.s3 > div div,
+.cardwall .col.s12 > .col.s3 > div div+div {
     position: relative;
     height: initial;
     width: initial;
 }
-.cardwall ul li div,
-.cardwall ul li div+div {
+.cardwall .col.s12 > .col.s3 > div,
+.cardwall .col.s12 > .col.s3 > div+div {
     color: #fff;
-    width: 100%;
-    height: 100%;
-    position: absolute;
+    /*width: 100%;
+    height: 100%;*/
+    /*position: absolute;*/
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
