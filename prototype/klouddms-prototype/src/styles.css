@@ -83,6 +83,8 @@ body {
     margin-left: 0;
     background-color: #333;
     padding-left: 0;
+    height: 12.1em;
+    padding-top: .2em;
 }
 
 .cardwall .col.s12>div {
@@ -105,9 +107,9 @@ body {
 .cardwall .col.s12 > .col.s3 > div,
 .cardwall .col.s12 > .col.s3 > div+div {
     color: #fff;
-    /*width: 100%;
-    height: 100%;*/
-    /*position: absolute;*/
+    width: 98%;
+    height: 170px;
+    position: absolute;
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
@@ -152,22 +154,20 @@ body {
 .rear p {
     margin: 0;
 }
-.cardwall ul > li:hover {
+.cardwall .col.s12 > .col.s3:hover {
   /*  min-height: 250px;
     max-height: 300px;*/
 	
 }
 
-
-
-.cardwall ul li:hover > .front {
+.cardwall .col.s12 > .col.s3:hover > .front {
     -webkit-transform: rotateY(180deg);
     -moz-transform: rotateY(180deg);
     -ms-transform: rotateY(180deg);
     -o-transform: rotateY(180deg);
     transform: rotateY(180deg);
 }
-.cardwall ul li:hover > .rear {
+.cardwall .col.s12 > .col.s3:hover > .rear {
     -webkit-transform: rotateY(0deg);
     -moz-transform: rotateY(0deg);
     -ms-transform: rotateY(0deg);
