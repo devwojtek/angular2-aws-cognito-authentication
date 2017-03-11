@@ -1,12 +1,12 @@
-<div class="col-md-12">
-	<div class="routerwall" style="">
+<div class="">
+	<div class="routerwall row" style="">
 		<div class="">
 			<div class="">
-				<h3 style="text-align:center; color:white;">Service Router</h3>
+			<h5 style="text-align:center; color:white; padding-top: .8em;">Service Router</h5>
 			</div>
 			<div class="" dnd-sortable-container [sortableData]="containers" >
-				<div class="containerWall"    *ngFor="let container of containers; let i = index" dnd-sortable [sortableIndex]="i" [dragEnabled]="dragOperation">
-					<div class="panel panel-router col-md-2"  dnd-sortable-container [sortableData]="container.tickets" [dropZones]="container.nextZones">
+				<div class="containerWall col s2 center-align"    *ngFor="let container of containers; let i = index" dnd-sortable [sortableIndex]="i" [dragEnabled]="dragOperation">
+					<div class="panel panel-router "  dnd-sortable-container [sortableData]="container.tickets" [dropZones]="container.nextZones">
 						<div class="panel-heading">
 							<h4>{{container.name}}</h4>
 						</div>
