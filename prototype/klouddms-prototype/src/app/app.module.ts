@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { DndModule } from 'ng2-dnd';
+import { DragulaModule } from 'ng2-dragula';
 
 import { ModalModule } from "ng2-modal";
 import { DateTimePickerModule } from 'ng2-date-time-picker';
@@ -53,7 +54,8 @@ import { AuthService } from './service/auth.service'
   	DndModule.forRoot(),
     ModalModule,
     DateTimePickerModule,
-    WizardModule
+    WizardModule,
+    DragulaModule
   ],
   providers: [ AuthService ],
   bootstrap: [AppComponent]

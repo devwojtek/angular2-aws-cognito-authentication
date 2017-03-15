@@ -4,15 +4,15 @@
 			<div class="">
 			<h5 style="text-align:center; color:white; padding-top: .8em;">Service Router</h5>
 			</div>
-			<div class="" dnd-sortable-container [sortableData]="containers" >
-				<div class="containerWall col s2 center-align"    *ngFor="let container of containers; let i = index" dnd-sortable [sortableIndex]="i" [dragEnabled]="dragOperation">
-					<div class="panel panel-router "  dnd-sortable-container [sortableData]="container.tickets" [dropZones]="container.nextZones">
+			<div class="" >
+				<div class="containerWall col s2 center-align"    *ngFor="let container of containers; let i = index; ">
+					<div class="panel panel-router ">
 						<div class="panel-heading">
 							<h4>{{container.name}}</h4>
 						</div>
 						<div class="">
-							<ul class="list-group">
-								<li *ngFor="let ticket of container.tickets; let x = index" class="list-group-item" dnd-sortable [sortableIndex]="x" [dragEnabled]="!dragOperation"  [dragData]="ticket">
+							<ul class="list-group" [dragula]='"first-bag"'>
+								<li *ngFor="let ticket of container.tickets; let x = index" class="list-group-item">
 									<div class="routercard">
 										<div class="top-card" style="background-color:royalblue;">{{ticket.advisor}} <a style="text-decoration:underline; color:white;"><span class="pull-right">#{{ticket.id}}</span></a></div>
 										<div class="top-card" *ngIf="['serviceFloor', 'multipoint'].indexOf(container.nextZones[0]) > -1">Tech:  {{ticket.technician}}</div>
