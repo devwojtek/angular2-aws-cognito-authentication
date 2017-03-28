@@ -21,7 +21,7 @@
 	      			<div class="col s1 blue-grey-text text-darken-2">.</div>
 			      	<div class="black col s11 ul-bar">
 				      	<ul class="right">
-				        	<li><a>Schedule Appointment </a></li>
+				        	<li><a (click)="myModal.open()">Schedule Appointment </a></li>
 					        <li><a>Write Ticket</a></li>
 					        <li><a>Vehicle Information</a></li>
 					        <li><a>Customer Information</a></li>
@@ -41,137 +41,23 @@
 	          
 </header>
 
-<!-- <header class="top-menu">
-	<div class="navbar navbar-default">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" >
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand"><span class="sr-only">Kloud DMS</span></a>
-			</div>
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="padding-left:0; padding-right:0;">
-				<ul class="nav navbar-nav navigation">
-					<li>
-						<a class="icon ion-wrench">
-							<span class="sr-only">Settings</span>
-
-						</a>
-					</li>
-					<li>
-						<a class="icon ion-earth"><span class="sr-only">Notifications</span>
-							<span class="ruby">
-								<span class="badge">10</span>
-							</span>
-						</a>
-					</li>
-					<li>
-						<a class="icon ion-chatbox"> <span class="sr-only">chat</span>
-							<span class="ruby">
-								<span class="badge">3</span>
-							</span>
-						</a>
-					</li>
-			
-					<li>
-						<a class="icon ion-android-person">
-							<span class="sr-only">Profile</span>
-						</a>
-					</li>
-					<li class="left-attachment">
-						<a>Weather</a>
-					</li>
-				</ul>
-		
-				<ul class="nav navbar-nav navigation">
-
-					<li>
-						<a>Customer Information</a>
-					</li>			
-					<li>
-						<a>Vehicle Information</a>
-					</li>
-					<li>
-						<a>Write Ticket</a>
-					</li>
-					<li>
-						<a (click)="myModal.open()">Schedule Appointment</a>
-					</li>
-
-					<li class="left-attachment">
-						<a>Today's Date</a>
-					</li>
-
-
-				</ul>
-			</div>
-		</div>
-
-	</div>
-</header> -->
-<!--
-<header  class="top-menu">
-
-
-
-
-	<nav class="top-menu-nav">
-		<ul class="navigation">
-			<li class="left-attachment">
-				<a>Logo</a>
-			</li>
-			<li>
-				<a class="icon ion-wrench">
-					<span class="accessibility-text" style="display:none;">Settings</span>
-				
-				</a>
-			</li>
-			<li>
-				<a class="icon ion-earth"><span class="accessibility-text" style="display:none;">Notifications</span>
-					<span class="ruby">
-						<span class="badge">10</span>
-					</span>
-				</a>
-			</li>
-			<li>
-				<a class="icon ion-chatbox"> <span class="accessibility-text" style="display:none">chat</span>
-					<span class="ruby">
-					<span class="badge">3</span>
-					</span>
-				</a>
-			</li>
-			<li>
-				<a class="icon ion-android-person">
-					<span class="accessibility-text" style="display:none">Profile</span>
-				</a>
-			</li>
-			<li class="center">
-				<a>Weather</a>
-			</li>
-		</ul>
-		
-	</nav>
-</header>-->
 
  <modal #myModal [closeOnEscape]="false" [closeOnOutsideClick]="false">
     <modal-content>
 	    <wizard>
 			<wizard-step title="Step 1">
 				<form #emailForm="ngForm">
-			      <div class="form-group">
+			      <div>
 			        <label>Choose a option</label>
 				    <div *ngFor="let option of options">
-				        <label>
-					        <input class="" type="radio" name="option" [(ngModel)]="_form.step1.option" 
+				        <p>
+					        <input class="with-gap" type="radio" name="option" [id]="option.value" [(ngModel)]="_form.step1.option" 
 					        [value]="option.value">
-					        {{option.display}}
-				        </label>
+					        <label [for]="option.value">{{option.display}}</label>
+				        </p>
 				    </div>
 			        <input type="text" class="form-control" name="value" aria-describedby="emailHelp" [(ngModel)]="_form.step1.value" [placeholder]="getPlaceHolderString(_form.step1.option)" required>
-			        <small *ngIf="_form.step1.option == 'email'" id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+			        <!-- <small *ngIf="_form.step1.option == 'email'" id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
 			      </div>
 			    </form>
 			    <div class="row text-right">				
@@ -219,7 +105,7 @@
 				<form #complainForm="ngForm">
 			    	<div class="form-group">
 				    	<label>Complaints</label>
-				    	<textarea class="form-control" name="complain" [(ngModel)]="_form.step3.value" required></textarea>
+				    	<textarea class="materialize-textarea" name="complain" [(ngModel)]="_form.step3.value" required></textarea>
 			    	</div>
 			    </form>				
 			    <div class="row text-right">				
@@ -247,18 +133,20 @@
 				</div>
 			</wizard-step>
 			 <wizard-step title="Step 5">
-			  	<div class="form-group">
-			  		<label>Select {{getDisplayString(_form.step1.option)}} </label> : <label> {{_form.step1.value }}</label>
-			  	</div>
-			  	<div class="form-group">
-			  		<label>Selected a card </label> : <label> {{_form.step2.value }}</label>
-			  	</div>
-			  	<div class="form-group">
-			  		<label>Complaints </label> : <label> {{_form.step3.value }}</label>
-			  	</div>
-			  	<div class="form-group">
-			  		<label>Available Date </label> : <label> {{_form.step4.date }}</label>
-			  	</div>
+			 	<div class="row">
+				  	<div class="input-field col s12">
+				  		<p>Select {{getDisplayString(_form.step1.option)}}  : {{_form.step1.value }}</p>
+				  	</div>
+				  	<div class="input-field col s12">
+				  		<p>Selected a card  :  {{_form.step2.value }}</p>
+				  	</div>
+				  	<div class="input-field col s12">
+				  		<p>Complaints  :  {{_form.step3.value }}</p>
+				  	</div>
+				  	<div class="input-field col s12">
+				  		<p>Available Date  :  {{_form.step4.date }}</p>
+				  	</div>
+				</div>  	
 			  	<div class="row text-right">				
 			    	<div class="col-xs-12">
 					  	<button class=" btn btn-sm btn-primary" type="button" previousStep >Previous</button>

@@ -403,10 +403,6 @@ header.top-menu {
     padding: 3px;
 }
 
-picker-modal > section {
-    position: initial !important;
-}
-
 .card {
     background-color: coral;
     box-shadow: 1px 1px 1px #d62c1a;
@@ -417,9 +413,6 @@ picker-modal > section {
     padding-left: 19%;
 }
 
-.modal-dialog {
-    width: 70% !important;
-}
 
 .widget-wrapper {
     position: relative;
@@ -574,4 +567,81 @@ a img {
     opacity: 0.2;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
     filter: alpha(opacity=20);
+}
+
+div.modal{
+    z-index: 10;
+    overflow: hidden;
+}
+
+div.modal .modal-header button.close {
+    float: right;
+    background-color: #fafafa !important;
+    color: #9F9F9F !important;
+    cursor: pointer;
+    transition: .2s ease-out;
+    outline: 0;
+    border: none;
+    display: inline-block;
+    -webkit-tap-highlight-color: ;
+}
+
+div.modal .modal-header button.close span{ 
+    font-size: 1.5em;
+}
+
+div.modal .modal-body .btn {
+    /*background-color: #337f99 !important;*/
+}
+
+div.modal .modal-footer {
+    display: none;
+}
+
+picker-modal section {
+    position: initial !important;
+}
+
+picker-modal .picker-modal {
+    overflow-y: hidden !important; 
+}
+
+picker-modal .picker-modal-main {
+    width: 68% !important;
+    margin-left: 50%;
+    margin-bottom: 3%;
+}
+
+picker-modal .picker-modal-main .picker-wrap {
+    width: initial !important; 
+}
+
+app-technician-dashboard-router div.containerWall.col.s2.center-align:nth-child(1) div.panel-heading {
+    background: yellow;
+    color: black;
+}
+
+app-technician-dashboard-router div.containerWall.col.s2.center-align:nth-child(6) div.panel-heading {
+    background: #009e0f;
+    color: white;
+}
+
+app-technician-dashboard-router div.containerWall.col.s2.center-align:nth-child(2) div.panel-heading {
+    background: #ff9900;
+    color: black;
+}
+
+app-technician-dashboard-router div.containerWall.col.s2.center-align:nth-child(3) div.panel-heading {
+    background: #2b78e4;
+    color: white;
+}
+
+app-technician-dashboard-router div.containerWall.col.s2.center-align:nth-child(4) div.panel-heading {
+    background: #ff00ff;
+    color: white;
+}
+
+app-technician-dashboard-router div.containerWall.col.s2.center-align:nth-child(5) div.panel-heading {
+    background: #b52422;
+    color: white;
 }

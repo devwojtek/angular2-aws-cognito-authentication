@@ -33,7 +33,8 @@ export class CognitoUtil {
     public static _USER_POOL_ID         = environment.userPoolId;
     public static _CLIENT_ID            = environment.clientId;
 
-    public _REDIRECT_URL                = "http://localhost:4201/app";
+    // public _REDIRECT_URL                = "http://klouddms.github.io/#/app";
+    public _REDIRECT_URL                = "http://localhost:4201/#/app";
     public _SERVER_URL                  = "127.0.0.1";
     public _LIVE_PORT                   = "4200";
     public _TCP_PORT                    = "1337";

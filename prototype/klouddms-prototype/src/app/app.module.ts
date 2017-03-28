@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
-import { DndModule } from 'ng2-dnd';
 import { DragulaModule } from 'ng2-dragula';
 
 import { ModalModule } from "ng2-modal";
@@ -19,6 +18,10 @@ import { ServiceManagerDashboardCardwallComponent } from './components/service-m
 import { ServiceManagerDashboardRouterComponent } from './components/service-manager-dashboard-router/service-manager-dashboard-router.component';
 import { ServiceManagerDashboardComponent } from './components/service-manager-dashboard/service-manager-dashboard.component';
 
+import { TechnicianDashboardComponent } from './components/technician-dashboard/technician-dashboard.component';
+import { TechnicianDashboardCardWallComponent } from './components/technician-dashboard-cardwall/technician-dashboard-cardwall.component';
+import { TechnicianDashboardRouterComponent } from './components/technician-dashboard-router/technician-dashboard-router.component';
+
 import { AuthService } from './service/auth.service'
 
 @NgModule({
@@ -29,7 +32,10 @@ import { AuthService } from './service/auth.service'
     ServiceManagerDashboardCardwallComponent,
     ServiceManagerDashboardRouterComponent,
     ServiceManagerDashboardComponent,
+    TechnicianDashboardComponent,
     AfterComponent,
+    TechnicianDashboardCardWallComponent,
+    TechnicianDashboardRouterComponent,    
     BeforeComponent
   ],
   imports: [
@@ -38,20 +44,19 @@ import { AuthService } from './service/auth.service'
     HttpModule,
     RouterModule.forRoot([
     {
-      path: '',
-      redirectTo: '/dashboard',
-      pathMatch: 'full'
-    },
-    {
       path: 'app/:id/:access',
       component: BeforeComponent
     },
     {
       path: 'dashboard',
-      component: AfterComponent
+      component: AfterComponent,
+      children: [
+        {path: '', redirectTo: '/dashboard/service' , pathMatch: 'full'},
+        {path: 'service', component: ServiceManagerDashboardComponent},
+        {path: 'technician', component: TechnicianDashboardComponent}
+      ]
     }
-    ]),
-  	DndModule.forRoot(),
+    ],  { useHash: true }),
     ModalModule,
     DateTimePickerModule,
     WizardModule,

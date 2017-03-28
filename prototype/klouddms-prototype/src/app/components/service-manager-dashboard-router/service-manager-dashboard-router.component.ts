@@ -40,11 +40,40 @@ export class ServiceManagerDashboardRouterComponent implements OnInit {
 					"2017 Honda Civic EX-L",
 					"5FNRL5H6XHB006972", "4:30 p.m.", null, "Marcus Aman", null, null
 				),
-			new ServiceTicket(15, "Nate Westen", "2008 Honda Acura", "vin", "4:30p.m.", null, "James Retiring", null, null),
-			new ServiceTicket(16, "Pete Seymour", "2015 GMC Yukon Denali XL", "vin", "2:00 p.m.", "10 minutes", "Simon Aspirer","Larry Shapiro", null), 
-			new ServiceTicket(17, "Matthew Blackmon", "1993 Ford Probe GT", "vin", "2:30 p.m.", "55 minutes", "Joe Newbie", null, null)
-			
-			], ['appointments','serviceEstimate']),
+				new ServiceTicket(
+					15, 
+					"Nate Westen", 
+					"2008 Honda Acura", 
+					"vin", 
+					"4:30p.m.", 
+					null, 
+					"James Retiring", 
+					null, 
+					null),
+				new ServiceTicket(
+					16, 
+					"Pete Seymour", 
+					"2015 GMC Yukon Denali XL", 
+					"vin", 
+					"2:00 p.m.", 
+					"10 minutes", 
+					"Simon Aspirer",
+					"Larry Shapiro", 
+					null), 
+				new ServiceTicket(
+					17, 
+					"Matthew Blackmon", 
+					"1993 Ford Probe GT", 
+					"vin", 
+					"2:30 p.m.", 
+					"55 minutes", 
+					"Joe Newbie", 
+					null, 
+					null)			
+				], [
+				'appointments',
+				'serviceEstimate']
+			),
 			new TicketContainer('serviceEstimate', 'Advisor', [],['serviceEstimate','parts','multipoint','serviceFloor','invoice']),
 			new TicketContainer('parts', 'Parts', [], ['parts']),
 			new TicketContainer('multipoint', 'Multipoint', [],['multipoint']),
