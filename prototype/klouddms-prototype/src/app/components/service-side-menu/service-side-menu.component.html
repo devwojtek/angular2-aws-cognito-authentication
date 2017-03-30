@@ -1,9 +1,11 @@
 <div class="side-menu z-depth-1">
 	<div class="collection">
-		<a class="collection-item">Dashboard</a>
-		<a class="collection-item active">Service</a>
-		<a class="collection-item">Inbox</a>
-		<a class="collection-item">Chat</a>
-		<a class="collection-item">Reports</a>
+		<a class="collection-item" [class.active]="item == 'dashboard'" (click)="onChangeRouter('dashboard')">Dashboard</a>
+		<a class="collection-item" [class.active]="item == 'service'"  (click)="onChangeRouter('service')">Service</a>
+		<a class="collection-item" [class.active]="item == 'technician'" (click)="onChangeRouter('technician')" >Technician</a>
+		<a class="collection-item" [class.active]="item == 'foreman'" (click)="onChangeRouter('foreman')" >Foreman</a>
+		<a class="collection-item" [class.active]="item == 'inbox'" (click)="onChangeRouter('inbox')" >Inbox</a>
+		<a class="collection-item" [class.active]="item == 'chat'" (click)="onChangeRouter('chat')" >Chat</a>
+		<a class="collection-item" [class.active]="item == 'reports'"  (click)="onChangeRouter('reports')">Reports</a>
 	</div>
 </div>	

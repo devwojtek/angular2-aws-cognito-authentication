@@ -405,7 +405,7 @@ header.top-menu {
 
 .card {
     background-color: coral;
-    box-shadow: 1px 1px 1px #d62c1a;
+    /*box-shadow: 1px 1px 1px #d62c1a;*/
     margin: 1%;
 }
 
@@ -616,6 +616,21 @@ picker-modal .picker-modal-main .picker-wrap {
     width: initial !important; 
 }
 
+app-technician-dashboard-router div.routerwall {
+    background: white;
+}
+
+app-technician-dashboard-router div.containerWall.col.s2.center-align div.panel {
+    border: 1px solid #2c3e50;
+}
+
+app-technician-dashboard-router div.containerWall.col.s2.center-align div.panel-heading {
+    border: 1px solid;
+    border-color: #2c3e50;
+    border-radius: 4px;
+    width: 105.5%;
+    margin-left: -3%;
+}
 app-technician-dashboard-router div.containerWall.col.s2.center-align:nth-child(1) div.panel-heading {
     background: yellow;
     color: black;
@@ -644,4 +659,9 @@ app-technician-dashboard-router div.containerWall.col.s2.center-align:nth-child(
 app-technician-dashboard-router div.containerWall.col.s2.center-align:nth-child(5) div.panel-heading {
     background: #b52422;
     color: white;
+}
+
+
+.p-l-6{
+    padding-left: 6% !important;
 }

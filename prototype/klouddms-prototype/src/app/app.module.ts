@@ -22,6 +22,10 @@ import { TechnicianDashboardComponent } from './components/technician-dashboard/
 import { TechnicianDashboardCardWallComponent } from './components/technician-dashboard-cardwall/technician-dashboard-cardwall.component';
 import { TechnicianDashboardRouterComponent } from './components/technician-dashboard-router/technician-dashboard-router.component';
 
+import { ForemanDashboardComponent } from './components/foreman-dashboard/foreman-dashboard.component';
+import { ForemanDashboardCardWallComponent } from './components/foreman-dashboard-cardwall/foreman-dashboard-cardwall.component';
+import { ForemanDashboardRouterComponent } from './components/foreman-dashboard-router/foreman-dashboard-router.component';
+
 import { AuthService } from './service/auth.service'
 
 @NgModule({
@@ -36,7 +40,10 @@ import { AuthService } from './service/auth.service'
     AfterComponent,
     TechnicianDashboardCardWallComponent,
     TechnicianDashboardRouterComponent,    
-    BeforeComponent
+    BeforeComponent,
+    ForemanDashboardComponent,
+    ForemanDashboardCardWallComponent,
+    ForemanDashboardRouterComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +60,8 @@ import { AuthService } from './service/auth.service'
       children: [
         {path: '', redirectTo: '/dashboard/service' , pathMatch: 'full'},
         {path: 'service', component: ServiceManagerDashboardComponent},
-        {path: 'technician', component: TechnicianDashboardComponent}
+        {path: 'technician', component: TechnicianDashboardComponent},
+        {path: 'foreman', component: ForemanDashboardComponent}
       ]
     }
     ],  { useHash: true }),
